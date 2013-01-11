@@ -1,0 +1,80 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Hiding Elements</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+<script>
+
+// HIDE
+function showHide(id) {
+	// load elements to be enacted on
+	var e = document.getElementById(id);									  // load div
+	var button = document.getElementById('toggleButton');		// load link so we can change its text
+
+	// if already shown, hide
+	if (e.style.display == "block") {
+		e.style.display = "none";						// set to not display
+		button.innerHTML = "show it";				// change button text
+		
+	}
+	// if hidden, show
+	else {
+		e.style.display = "block";
+		button.innerHTML = "hide it";
+	}
+}
+
+// SHRINK
+// sometimes hiding something isn't the goal as much as minimizing
+// this one is a little more complicated...
+function minimize(id) {
+	var e = document.getElementById(id);								// load div
+	var button = document.getElementById('minimize');		// load button
+	
+	// instead of looking to the 'display' style, look to the height
+	if (e.style.height == "50px") {											// if minimized, restore
+		e.style.height = "auto";													// set height to auto (or absolute value)
+		e.style.padding = "100px";												// reset padding
+		e.style.backgroundColor = "white";								// " background color
+		e.innerHTML = "<p>This div can be toggled!</p>";	// re-insert text
+		button.innerHTML = "minimize";										// change back button text
+	}
+	else {																							// minimze
+		e.style.height = "50px";													// set height to 50px
+		e.style.paddingTop = 0;														// no padding
+		e.style.paddingBottom = 0;
+		e.style.backgroundColor = "#c90";									// change background color
+		e.innerHTML = "";																	// no inner text
+		button.innerHTML = "restore";											// change button text
+	}
+}
+</script>
+</head>
+
+<body>
+<div id="wrapper"> 
+  
+  <!-- div to toggle - note we initialize the style -->
+  <div id="toggleDiv" style="display:block">
+    <p>This div can be toggled!</p>
+  </div>
+  <!-- end toggle --> 
+  
+  <!-- this link toggles the visibility of the above div --> 
+  <!-- this method, specifying the href as 'javascript', avoids some of the awkward empty link
+  		 stuff that can happen - note this doesn't allow for various interactions, just a simple toggle --> 
+  
+  <!-- note that we can have an initial text for the link/button, which can then change when
+  		 interacted with -->
+  <p>[ <a id="toggleButton" href="javascript:showHide('toggleDiv')">click to toggle</a> ]</p>
+  <p>[ <a id="minimize" href="javascript:minimize('toggleDiv')">click to minimize</a> ]</p>
+  
+  <!-- for some fancier and more in-depth examples, see:
+  		 http://www.randomsnippets.com/2008/02/12/how-to-hide-and-show-your-div --> 
+  
+</div>
+<!-- end wrapper -->
+
+</body>
+</html>

@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Logo in Menu - By Page Filename</title>
+<style>
+html, body {
+	background-color: rgb(150,140,130);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+}
+a {
+	text-decoration: none;
+}
+#wrapper {
+	background-color: white;
+	width: 900px;
+	margin: 10px auto 30px auto;
+	padding: 20px;
+}
+#header {
+	/* nothing here! */
+}
+#header ul {
+	margin: 0;
+	margin-left: -40px;
+	list-style-type: none;
+}
+#header li {
+	float: left;	
+}
+#header li:hover {
+	
+}
+#header li div {
+	width: 120px;	
+	height: 120px;
+	background: url(images/MenuRollover.png) no-repeat 0 0;
+	display: block;
+	padding: 0px;
+	text-align: center;
+}
+#header li div:hover {
+	background-position: 0 -120px;
+}
+#header li p {
+	position: relative;
+	top: 98px;
+	color: white;
+}
+#header li p:hover {
+	color: rgb(176, 29, 0);
+}
+
+#mainContent {
+	padding: 20px;
+	border: 1px solid rgb(176, 29, 0);
+}
+.clear {
+	clear: both;
+}
+</style>
+<script>
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+  <div id="header">
+    <ul>
+      <li><a href="#"><div id="products"><p>PRODUCTS</p></div></a></li>
+      <li><a href="#"><div id="about"><p>ABOUT</p></div></a></li>
+      <li><a href="#"><div id="cart"><p>CART</p></div></a></li>
+      <li><a href="#"><div id="contact"><p>CONTACT</p></div></a></li>
+    </ul>
+    
+    <!-- we need to clear the float from the list; here we use a utillity div created for this purpose -->
+    <div class="clear"></div>
+  </div>
+  <!-- end header -->
+  
+  <div id="mainContent">
+    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Morbi a pretium lectus. Cras lacus dui, vestibulum sit amet suscipit sit amet, facilisis ac elit. Mauris sagittis ante eu dolor blandit laoreet. Suspendisse posuere varius massa. In eget mauris vitae diam sodales venenatis vel eu ligula. Fusce ultrices pharetra lorem in feugiat. Morbi non eros ante. Maecenas commodo magna non lacus tempor ultricies.</p>
+    <p>Ut semper, turpis id pulvinar dictum, tellus nulla faucibus risus, id euismod eros urna fringilla odio. Aenean sollicitudin, ante at interdum scelerisque, ipsum neque feugiat orci, vel tempus mi magna vel mauris. Vestibulum hendrerit, mauris ut venenatis tincidunt, justo dui pretium libero, vitae tempus nunc nunc quis enim. Donec sit amet ligula quis purus bibendum iaculis vel et libero. Vivamus neque elit, feugiat eu molestie eu, ullamcorper et dolor. Nunc ut imperdiet felis. Morbi leo felis, condimentum eget posuere ac, eleifend eu sapien. Sed porttitor consequat orci, iaculis aliquet tellus interdum eget. Morbi eu quam orci. Sed eu lacus purus, et ultricies diam. Aliquam sagittis laoreet volutpat.</p>
+    <p>Sed id augue rutrum eros laoreet mollis non at sapien. Sed eget nunc nisi, id bibendum quam. Aenean in dui lectus. Fusce mattis interdum luctus. Phasellus ut purus ornare urna sagittis aliquam. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nam mattis eleifend est a gravida. Proin gravida dapibus dui, id blandit nisl molestie vitae.</p>
+  </div>
+  <!-- end mainContent --> 
+  
+</div>
+<!-- end wrapper -->
+</body>
+</html>

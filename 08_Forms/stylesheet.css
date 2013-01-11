@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* CSS Document */
+
+body {
+	/* background: url(images/topBorder.png) repeat-x;
+	background: #333; */
+	background: url(images/paper.png); 	/* or striations */
+}
+
+/* overall wrapper */
+#wrapper {
+	width: 900px;
+	background: white;
+	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+	margin: 10px auto 10px auto;
+	padding: 30px;
+	-moz-box-shadow: 0 5px 15px #000;
+	-webkit-box-shadow: 0 5px 15px #000;
+	box-shadow: 0 5px 15px #000;
+}
+
+/* basic html styling */
+h1 {
+	font-size: 48px;
+	font-weight: 100;
+	color: #999;
+	margin: 0;
+}
+p {
+	font-size: 12px;
+}
+a, a:link, a:visited {
+	color: #333;
+	text-decoration: none;
+}
+a:active, a:hover {
+	color: #c90;
+	text-decoration: underline;
+}
+
+/* profile photo */
+#profilePhoto {
+	border-radius: 10px;
+	width: 200px;				/* ensure width is consistent */
+}
+
+/* form styling */
+#updateProfile label {
+	float: left;
+	clear: left;
+	width: 150px;
+}
+#updateProfile input {
+}
+
+/* submit button */
+#submit {
+	width: 100px;
+}
+
+#confirmPhoto {
+	float: left;
+	clear: left;
+	width: 200px;
+	margin: 0 30px 0 0;
+}
+
+#clear {
+	clear: both;
+}

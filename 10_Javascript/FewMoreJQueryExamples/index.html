@@ -1,0 +1,191 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+
+<head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<title>jQuery Basics  |  Jeff Thompson</title>
+  
+  <!-- load jQuery from a local file, jQuery UI library remotely (for highlighting) -->
+  <script src="jquery.js"></script>
+  <script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1/jquery-ui.min.js"></script>
+
+  
+  <!-- local styles for examples -->
+	<style>
+		
+		/* nicety for presentation - in no way required */
+		body {
+			font-family: Arial, Helvetica, sans-serif;
+			font-size: 12px;
+			margin: 50px;
+		}
+		
+		/* FIRST EXAMPLE (all just to make it pretty) */
+		div.main {
+			width: 300px;
+			background: #c90;
+			text-align: center;
+			padding: 20px 200px 20px 200px;
+			border-bottom: 1px #000 dotted;
+		}
+		div.toggle {
+			width: 300px;
+			padding: 20px 200px 20px 200px;
+			background: #c90;
+			color: #fff;
+			text-align: center;
+		}
+		
+		/* SECOND EXAMPLE (formats the div, also for prettiness) */
+		div.showHideButtons {
+			width: 660px;
+			background: #c90;
+			padding: 20px;
+		}
+		
+		/* THIRD EXAMPLE (class to add to text on hover) */
+		strong.highlight {
+			color: #fff;
+			background: #c90;
+		}
+		
+		/* FINAL EXAMPLE (important styles for the footer) */
+		div.dynamicFooter {
+			width: 700px;
+			margin-top: 20px;							/* puts border above text */
+			border-top: 1px #999 solid;
+			background: #fff;							/* white background in case of overlap */
+		}
+		
+	</style>  
+</head>
+
+<body>
+
+	<!-- intro and spacer -->  
+  <p style="font-size: 18px; color: #666; font-weight: 10">jQuery Basics</p>
+  <div style="width: 700px; margin:0px 0 50px 0; border-top: 1px #999 solid"></div>
+  
+  
+  <!-- DIV SHOW/HIDE DIV -->
+  <!-- this one looks nice, since the controls are another div -->
+	<div class="main">
+  	This is a text that can be shown or hidden.  It looks particularly nice, since its control is another div with the same styling.
+  </div>
+  <div class="toggle">[ click here for more information ]</div>
+  
+	<script>
+	$(document).ready(function() {
+		$(".main").hide();										// default to hidden
+		$(".toggle").click(function() {				// if the div is clicked...
+			$(".main").slideToggle(1000);				// slide down the 'main' div...
+			// $(".toggle").slideToggle(1000);	// optionally, hide the 'toggle' div
+		});
+	});
+	</script>
+  
+  
+  <!-- spacer -->  
+  <div style="width: 700px; margin:50px 0 50px 0; border-top: 1px #999 solid"></div>
+  
+  
+  <!-- BUTTONS SHOW/HIDE DIV -->
+  <!-- a div to show/hide, including text - note the class which is defined in the header -->
+	<div class="showHideButtons">
+  	<p>Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat.</p>
+  </div>
+  
+  <!-- buttons that will show/hide div when clicked at varying speeds; button id is found in the js -->
+  <p>
+  	Show/Hide:&nbsp;&nbsp;&nbsp;
+  	<button id="250ms">250 ms</button>&nbsp;&nbsp;&nbsp;
+  	<button id="1000ms">1000 ms</button>&nbsp;&nbsp;&nbsp;
+  	<button id="2500ms">2500 ms</button>&nbsp;&nbsp;&nbsp;
+  	<button id="5000ms">5000 ms</button>
+  </p>
+	
+	<script>
+  $(document).ready(function() {									// wait until document has loaded
+		$("#250ms").click(function() {								// if the button is clicked...
+			$(".showHideButtons").slideToggle(250);		  // ...show/hide div, argument sets speed in ms
+		});
+		$("#1000ms").click(function() {							  // multiple buttons can effect the same div
+			$(".showHideButtons").slideToggle(1000);
+		});
+		$("#2500ms").click(function() {
+			$(".showHideButtons").slideToggle(2500);
+		});
+		$("#5000ms").click(function() {
+			$(".showHideButtons").slideToggle(5000);
+		});
+	});
+	</script>
+  
+  
+  <!-- spacer -->  
+  <div style="width: 700px; margin:50px 0 50px 0; border-top: 1px #999 solid"></div>
+  
+  
+  <!-- ADD CLASS/STYLE -->
+  <!-- here we change all bold elements to red -->
+  <div style="width:700px; margin-bottom: 50px">		<!-- margin used for final section -->
+  	<p>
+    Hover over <strong>bold</strong> and <em>italic</em> elements to highlight!<br /><br />
+   	Lorem <strong>ipsum</strong> dolor sit amet, consectetur <em>adipiscing</em> elit. Mauris <strong>nulla</strong> lorem, elementum ut mollis eget, vulputate <em>et</em> leo. Ut <strong>varius</strong>, nunc et semper tristique, eros odio tincidunt arcu, sit amet lacinia dui tortor <em>tristique</em> massa. Nam <strong>vitae</strong> sapien libero, sed <em>dapibus</em> arcu. Class <strong>aptent</strong> taciti sociosqu ad litora torquent per conubia nostra, per <em>inceptos</em> himenaeos. Praesent <strong>ut</strong> sodales dolor. Nullam <strong>massa</strong> risus, tempor ut convallis et, vulputate <em>eu</em> sem. Nunc <strong>vitae</strong> velit eget velit <em>mollis</em> semper. Nunc <strong>rhoncus</strong> est neque, sit amet <em>rutrum </em>leo. Pellentesque <strong>commodo</strong> purus nec metus tempus lobortis sagittis <em>mauris</em> lobortis. Aliquam <strong>lorem</strong> quam, dapibus ut sollicitudin ut, pellentesque <em>non</em> tellus. Ut <strong>scelerisque</strong> bibendum tortor <em>non</em> consectetur. Donec <strong>enim</strong> mauris, condimentum sed scelerisque vitae, dignissim <em>et</em> purus. Nunc <strong>sagittis</strong> gravida nulla, eu dignissim enim sodales <em>sit</em> amet. Cum <strong>sociis</strong> natoque penatibus et magnis dis parturient montes, nascetur <em>ridiculus</em> mus. </p>
+  </div>
+  
+  <!-- basic JQuery method -->
+	<script>
+	$(document).ready(function() {
+		$("strong").hover(function() {						// if we hover over any bold elements
+			$("strong").each(function() {						// if not used, only a single element will be changed**
+				$(this).toggleClass("highlight");			// toggles the highlight class on/off
+			});
+		});	
+		// ** in some ways, 'each' is a bit like a for/while loop in js/java/etc
+  
+  	// slightly fancier fading method for italics (note, doesn't seem to work selecting all)
+		// this requires the jQuery UI library, which is loaded in the head through a URL
+		$("em").hover(function() {
+				$(this).stop().animate( { backgroundColor: "#c90" }, 500);		// background light gray in 500ms
+			}, function() {
+				$(this).stop().animate( { backgroundColor: "#fff"}, 1000);		// animate off over 100ms
+			});
+	});		
+  </script>
+  
+  
+  <!-- PLACE ITEM AT BOTTOM OF PAGE -->
+  <!-- this is actually quite hard to do with just CSS -->
+  <!-- mostly pulled from: http://www.codicode.com/art/the_best_sticky_footer.aspx -->
+	
+  <!-- create div with borders like the spacers above - see the css style at top, also requires a margin in previous div -->
+  <div id="footer" class="dynamicFooter">
+	  <p style="padding-bottom: 5px">
+    	This is sometimes called a "sticky footer", and would be a great place to put your contact information, copyright (or Creative Commons!) details, or Facebook/Twitter links, etc
+		</p>
+  </div>
+  
+  <script>
+	function positionFooter() {
+		// get attributes from the footer div, then test if the window is larger than the rest of the document
+		// if so, put the footer at the bottom of the window, otherwise let it sit out of site at the bottom of the page
+		var f = $("#footer");
+		if ((($(document.body).height() + f.height()) < $(window).height() && f.css("position") == "fixed") || ($(document.body).height() < $(window).height() && f.css("position") != "fixed")) {
+			f.css({ position: "fixed", bottom: "0px" });
+		}
+		else { 
+			f.css({ position: "static" }); 
+		} 
+	}
+	
+	// dynamically check when the window is loaded or size is changed
+	$(document).ready(function () { 
+		positionFooter(); $(window).scroll(positionFooter);
+		$(window).resize(positionFooter); 
+		$(window).load(positionFooter); 
+	});		
+	</script>
+  
+</body>
+</html>

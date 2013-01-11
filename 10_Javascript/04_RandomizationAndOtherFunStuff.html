@@ -1,0 +1,61 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Randomization and Other Fun Stuff</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+<script>
+
+	var cells = [
+		": . . . . . . . .",
+		". : . . . . . . .",
+		". . : . . . . . .",
+		". . . : . . . . .",
+		". . . . : . . . .",
+		". . . . . : . . .",
+		". . . . . . : . .",
+		". . . . . . . : .",
+		". . . . . . . . :"];
+	var frame = 0;
+	var frameRate = 200;  						// time betwen frame in ms
+	function animateTitle() {
+		if (frame == cells.length-1) {
+			frame = 0;
+		}
+		else {
+			frame++;
+		}
+		document.title = cells[frame];
+		setTimeout(animateTitle, frameRate);
+	}
+	
+	var nouns = ["man", "dog", "car", "fox", "toilet", "book"];
+	var verbs = ["ate", "rubbed", "sat on", "forgot", "remembered"];
+	function poem() {
+		var n1 = Math.floor(Math.random(nouns.length) * nouns.length);
+		var n2 = Math.floor(Math.random(nouns.length) * nouns.length);
+		var v = Math.floor(Math.random(verbs.length) * verbs.length);
+		var p = "The " + nouns[n1] + " " + verbs[v] + " the " + nouns[n2] + ".";
+		document.getElementById('hello').innerHTML = "<h1>" + p + "</h1>";
+	}
+
+</script>
+
+</head>
+
+<body>
+<div id="wrapper">
+
+<div id="hello">
+<!-- put some cool stuff here! -->
+</div>
+
+<p>[ <a onClick="animateTitle()">animate the title</a> ]</p>
+<p>[ <a onClick="poem()">create a random poem</a> ]</p>
+
+</div>
+<!-- end wrapper -->
+
+</body>
+</html>

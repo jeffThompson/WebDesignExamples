@@ -1,0 +1,116 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Rollover and Drop-Down Menus</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+<!-- load JQuery from an external file - this can be done for any script -->
+<script src="jquery.js"></script>
+<script src="jqueryUI.js"></script>		<!-- extension for JQuery that does fancier animations -->
+
+<!-- JQuery scripts tend to go inside the HTML -->
+<!-- NOTE: change the 'visibility' style for the dropdown! -->
+
+</head>
+
+<body>
+<div id="wrapper"> 
+  
+  <!-- DROP-DOWN MENU --> 
+  <!-- we've re-engineered a bit of our menu for JQuery, mostly simplifying! --> 
+  
+  <!-- ul contains all menu items -->
+  <ul id="dropdown">
+    <!-- each li contains a single menu item and its dropdown --> 
+    <!-- NOTE: we no longer need IDs! -->
+    <li><a href="#">Categories</a> 
+      <!-- an enclosed div contains all dropdown elements -->
+      <div> 
+        <!-- and each link will be an item in the dropdown --> 
+        <a href="#">HTML</a>
+        <a href="#">CSS</a>
+        <a href="#">JavaScript</a>
+        <a href="#">PHP</a> </div>
+    </li>
+    
+    <!-- next menu item -->
+    <li><a href="#">Ideas</a>
+      <div> <a href="#">Eat</a>
+      <a href="#">Sleep</a>
+      <a href="#">Coffee</a>
+      <a href="#">Read</a> </div>
+    </li>
+  </ul>
+  
+  <!-- JQuery scripts generally go in the HTML after the elements they change -->
+  <script>
+		// when loaded, make sure menus are hidden!
+		$(document).ready(function() {						// when loaded...
+			$("#dropdown li").find("div").hide();		// hide the div inside
+		});
+		
+		// BASIC EXAMPLE - TOGGLE
+		$("#dropdown li").hover(											// when a li is hovered over
+			function() {
+				$(this).find("div").stop(true, true).slideToggle(1000);		// toggle its visibility
+			} 																													// the argument is time in ms
+		);
+		
+		/* WHAT'S HAPPENING HERE?
+		1.  the dropdown's li is hovered over
+		2a. 'this' refers to the li (itself)
+		2b. 'find' looks for a div inside the li ('this')
+		2c. 'stop' prevents retriggering (try it without)
+		2d. 'slideToggle' runs the animation, either up or down
+		*/
+		
+		// TWO SPEEDS - different for up and down!
+		/*
+		$("#dropdown li").mouseenter(																// like mouseOver in regular JS
+			function() {
+				$(this).find("div").stop(true, true).slideDown(100);		// show the div in 100ms
+			}).mouseleave(																						// when no longer hovering
+				function() {
+					$(this).find("div").stop(true, true).slideUp(1000);		// hide it more slowly (1 sec)
+				}
+			);
+			*/
+			
+			/* WHAT'S HAPPENING IN THIS ONE?
+			1.  selection happens the same way as above
+			2a. if the mouse hovers (enters)
+			2b. get the div inside (like above)
+			2c. stop any animation already happening
+			2d. slide down
+			3a. if the mouse leaves
+			3b. find the div, stop the animation in progress, slide up
+			*/
+				
+			// OTHER TRANSITIONS - using JQuery UI
+			/*
+			$("#dropdown li").mouseenter(																// like mouseOver in regular JS
+			function() {
+				$(this).find("div").stop(true, true).show("fade", 500);		// show the div in 100ms
+			}).mouseleave(																						// when no longer hovering
+				function() {
+					$(this).find("div").stop(true, true).hide("fold", 1000);		// hide it more slowly (1 sec)
+				}
+			);
+			*/
+			
+			// WHAT'S THE DIFFERENCE?
+		  // basically, we do the same as previous examples but add the JQuery UI library
+			// the built-in effects include a fade-in/out ("fade") and a fold animation
+			
+			// these are both invoked using the show/hide command with the name of the animation
+			// as an argument (as well as the time in ms)		
+	</script> 
+  
+  <!-- ensure that subsequent content is shown below the menu -->
+  <div id="clear"></div>
+</div>
+<!-- end wrapper -->
+
+</body>
+</html>

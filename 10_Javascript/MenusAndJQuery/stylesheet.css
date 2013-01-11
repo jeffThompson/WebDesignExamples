@@ -1,0 +1,117 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/* BASIC CSS STUFF AND WRAPPER */
+html, body {
+	background-color: #333;
+	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+}
+h1 {
+	font-size: 36px;
+}
+p {
+	font-size: 12px;
+}
+a, a:link, a:visited {
+	color: rgb(255, 100, 0);
+	text-decoration: none;
+	border-bottom: 1px dotted rgb(255, 100, 0);
+}
+a:active, a:hover {
+	color: rgb(100, 50, 0);
+	text-decoration: none;
+	border-bottom: 1px dotted rgb(100, 50, 0);
+}
+#wrapper {
+	width: 900px;
+	background-color: white;
+	margin: 10px auto 20px auto;
+	padding: 30px;
+	text-align: center;
+}
+
+/* DIV FOR SHOWING DYNAMIC CONTENT  USING JS*/
+#hello {
+	width: 700px;
+	height: 100px;
+	margin: 0 auto 0 auto;
+	border: 1px dashed black;
+}
+
+/* ROLLOVER IMAGE */
+#rollover {
+	display: block;							/* display as part of text */
+	width: 300px;								/* same as image (if stacked vertically) */
+	height: 100px;							/* half the iamge */
+	margin: 0 auto 30px auto;		/* center in the div, give some space at bottom */
+	background: url("images/rolloverBoth.png") no-repeat 0 0;
+}
+#rollover:hover {
+	background-position: 0 -100px;		/* move up 1/2 of the image's height */
+}
+#rollover span {
+	position: absolute;			  /* move the span way above the top of the window */
+	top: -999px;						  /* this ensures screen-readers read it but we don't see it */
+}
+
+/* DROPDOWN MENU */
+#dropdown {
+	margin: 0;							/* these styles are needed, but do "nice" formatting */
+	padding: 0;							/* ditto */
+	z-index: 30;						/* not necessary (and a hack) to ensure menu is on top */
+}
+#dropdown li {						/* li is the main headings ("Categories", "Ideas", etc) */
+	float: left;						/* puts our items side-by-side */
+	list-style: none;				/* no bullets */
+	position: relative;			/* relative to the next - menu will be absolute below */
+}
+#dropdown li a {					/* make list-item links formatted specially */
+	display: block;					/* "block" stacks vertically, like separate <p> tags */
+	width: 120px;						/* format nicely... */
+	padding: 5px;
+	background: rgb(100, 90, 80);
+	color: white;
+	border: 0 none;								 /* get rid of previous border */
+}
+#dropdown li a:hover {
+	background: #c90;							 /* when hovered, change color */
+}
+#dropdown div {									 /* the div represents the dropdown items */
+	position: absolute;   				 /* try without - menu will take up space even when hidden */
+	visibility: hidden;						 /* don't see it until hovered! */
+}
+#dropdown div a {								  /* format div links to look nice */
+	width: auto;										/* grow to longest text... */
+	min-width: 100px;								/* ...but be at LEAST as wide as the menu title */
+	padding: 5px 15px 5px 15px;			/* add some padding inside each menu item */
+	white-space: nowrap;					  /* keeps our menu from looking weird on longer items */
+	background: rgb(160, 150, 140);	/* different background color */
+	border-top: 1px white dotted;		/* add top border */
+}
+#dropdown div a:hover {						/* like the list items, change color on hover */
+	background: rgb(220, 210, 200);
+	color: black;
+}
+
+/* GENERAL-USE DIV FOR CLEARING FLOAT */
+#clear {
+	clear: both;
+}
+
+/* STICKY FOOTER */
+#stickyFooter {
+	width: 900px;
+	background-color: #c90;
+	margin: auto;
+	padding: 10px;
+	display: block;
+}
+
+/* DIV FOR TOGGLE */
+#toggleDiv {
+	width: 100px;
+	border: 1px dashed black;
+	margin: auto;
+	padding: 100px;
+}

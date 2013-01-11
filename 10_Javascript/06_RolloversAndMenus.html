@@ -1,0 +1,98 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Rollover and Drop-Down Menus</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+<script>
+	var menuId = 0;
+	
+	// open menu
+	function openMenu(id) {
+		
+		// if a menu item is already selected, hide it
+	  if (menuId) {
+			menuId.style.visibility = 'hidden';
+		}
+		// then display the new one!
+		menuId = document.getElementById(id);
+		menuId.style.visibility = 'visible';
+	}
+	
+	// close menu
+	function closeMenu() {
+		// again: if a menu item is selected, hide it
+		if (menuId) {
+			menuId.style.visibility = 'hidden';
+		}		
+	}
+	
+	// if we click away from the menu, close it
+	document.onclick = closeMenu();	
+</script>
+</head>
+
+<body>
+
+<!-- EMBOSSED ROLLOVERS
+		 Based on this tutorial:
+     http://www.creare-webdesign.co.uk/blog/photoshop-tutorials/joes-top-3-tips.html
+     
+		 1. New PS file at 300 x 100px (use grid to layout)
+     2. Fill with a color, optional Gaussian Noise
+     3. Create text of any color
+     4. Change layer style:
+     			a. White drop shadow, Normal blend, 90º angle, 1-2px dist/size,
+             0px spread
+          b. Black inner shadow, Overlay blend, 90º angle, 3-4px dist/size,
+             0px spread
+     5. Save, then make another version
+-->
+
+<div id="wrapper"> 
+  
+  <!-- ROLLOVER --> 
+  <!-- the image is actually loaded in the CSS, not here as we might expect! --> 
+  <!-- the span will appear only for browsers that can't load the image --> 
+  <a id="rollover" href="#"><span>alternative text</span></a> 
+  
+  <!-- DROP-DOWN MENU --> 
+  <!-- ul		  style the entire list in CSS
+ 			 li		  each list item has a drop-down inside
+       div		this div is the drop-down itself, hidden until scrolled over
+       
+       Actual hover/display is done through Javascript at top
+  -->
+  
+  <!-- ul contains all menu items -->
+  <ul id="dropdown"> 	
+    <!-- each li contains a single menu item and its dropdown -->
+    <li> <a href="#" onMouseOver="openMenu('menu1')" onMouseOut="closeMenu()">Categories</a>
+      <!-- an enclosed div contains all dropdown elements -->
+      <div id="menu1" onMouseOver="openMenu(this.id)" onMouseOut="closeMenu()">
+      	<!-- and each link will be an item in the dropdown -->
+        <a href="#">HTML</a>
+        <a href="#">CSS</a>
+        <a href="#">JavaScript</a>
+        <a href="#">PHP</a>
+       </div>
+    </li>
+    
+    <!-- next menu item -->
+    <li> <a href="#" onMouseOver="openMenu('menu2')" onMouseOut="closeMenu()">Ideas</a>
+      <div id="menu2" onMouseOver="openMenu(this.id)" onMouseOut="closeMenu()">
+      <a href="#">Eat</a>
+      <a href="#">Sleep</a>
+      <a href="#">Coffee</a>
+      <a href="#">Read</a> </div>
+    </li>
+  </ul>
+  
+  <!-- ensure that subsequent content is shown below the menu --> 
+  <div id="clear"></div>
+  
+</div>
+<!-- end wrapper -->
+
+</body>
+</html>

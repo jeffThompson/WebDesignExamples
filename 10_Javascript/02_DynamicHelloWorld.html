@@ -1,0 +1,37 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>A Fancier &quot;Hello World&quot;</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+<!-- scripts generally go in the head so we can be sure they
+	 are loaded before the content is shown -->
+<script>
+	// a function is a bit of code to be executed when called
+	function sayHello() {
+		// get an element from the DOM called 'hello' and insert the following HTML
+		document.getElementById('hello').innerHTML = "<h1>Hello World!</h1>";
+	}
+	function sayNothing() {
+		document.getElementById('hello').innerHTML = "";
+	}
+</script>
+</head>
+
+<body>
+<div id="wrapper">
+  
+  <div id="hello"> 
+    <!-- we'll insert text here dynamically! --> 
+  </div>
+  <!-- end hello div --> 
+  
+  <!-- onMouseOver does something when we hover - notice without a onMouseOut that the text stays -->
+  <p>[ <a href="#" onMouseOver="sayHello()" onMouseOut="sayNothing()">click the link to display the greeting in the box above</a> ]</p>
+
+</div>
+<!-- end wrapper -->
+
+</body>
+</html>

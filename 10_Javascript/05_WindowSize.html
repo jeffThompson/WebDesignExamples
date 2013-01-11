@@ -1,0 +1,46 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Window Size and Sticky Footer</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+<script>
+	function getSize() {
+		// while the window.innerWidth method is a little easier to remember, this one is preferred
+		// for its cross-browser capability
+		var w = document.documentElement.clientWidth;
+		var h = document.documentElement.clientHeight;
+		
+		// format the results into something pretty
+		document.getElementById('hello').innerHTML = "<h1>Width: " + w + " • Height: " + h + "</h1>";
+		
+		// put that footer down at the bottom!
+		var footer = document.getElementById("stickyFooter");		// load once for convenience
+		var footerHeight = footer.offsetHeight;									// get the height of the footer (with text)
+		footer.style.position = "fixed";												// permanently attach to bottom
+		footer.style.top = (h - footerHeight) + "px";						// a little cumbersome but a good demo
+		footer.style.left = ((w-900)/2 - 10) + "px";						// ech, a hack but works
+	}
+</script>
+</head>
+
+<!-- any time the window is resized, run the code! -->
+<body onload="getSize()" onresize="getSize()">
+<div id="wrapper">
+  
+  <div id="hello"> 
+    <!-- we'll place dynamic content in here! --> 
+  </div>
+  
+</div>
+<!-- end wrapper -->
+
+<div id="clear"></div>
+
+  <div id="stickyFooter">
+    <p>Shockingly difficult is to stick a footer to the bottom of the screen!  This is one way to do it...</p>
+  </div>
+  <!-- end footer --> 
+
+</body>
+</html>

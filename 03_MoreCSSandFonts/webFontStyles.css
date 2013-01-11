@@ -1,0 +1,71 @@
+@charset "UTF-8";
+/* CSS Document */
+
+/*
+USING WEB FONTS
+Below is a test style to show you how to use web fonts.
+
+LOCATION:
+Fonts should be stored in a subfolder for convenience - call
+it 'fonts' or something similarly clear.
+
+FONT SOURCES:
+dafont  			http://www.dafont.com
+TypeKit				https://typekit.com
+
+The font used in this example is called Champagne & Limousines:
+http://www.dafont.com/champagne-limousines.font
+
+* note: the font name has been changed to remove the '&' since
+  it would likely cause problems when online
+
+CONVERTING:
+FontSquirrel		http://www.fontsquirrel.com
+*/
+
+/* set up web font - do this BEFORE anything else */
+@font-face {
+	font-family: 'Test Font';		/* this allows us to define an easier name for later; can be anything */
+	
+	/* load the various versions in order of preference (with SVG last); browsers 
+		 will load the first format they allow, then ignore the rest */
+   src: url('fonts/champagneandlimousines-webfont.eot');
+   src: url('fonts/champagneandlimousines-webfont.eot?#iefix') format('embedded-opentype'),
+         url('fonts/champagneandlimousines-webfont.woff') format('woff'),
+         url('fonts/champagneandlimousines-webfont.ttf') format('truetype'),
+         url('fonts/champagneandlimousines-webfont.svg#champagne__limousinesregular') format('svg');
+
+  /* note: the second url() is a hack for Internet Explorer and replaces the 'smiley face' trick */
+	
+	/* make sure you reset font styling so your new font appears as desired */
+	font-weight: normal;
+  font-style: normal;
+} 
+
+/* set background color */
+html, body {
+	background-color: rgb(105,100,95);
+}
+
+/* overall wrapper */
+#wrapper {
+	width: 700px;
+	background-color: white;
+	margin: 30px auto 30px auto;
+	padding: 50px;
+}
+
+/* web font paragraph */
+.webFontTest {
+	color: rgb(55,50,45);
+	font-family: 'Test Font', Arial, Helvetica, sans-serif;		/* add your new font, plus some backups */
+	font-size: 36px;
+	text-align: justify;
+	
+	/* further font and type options */
+	font-weight: 100;						/* try with Helvetica or similar to see how you can 'thin up' a font */
+	letter-spacing: 0.5em;			/* 0 = normal, 0.5 = half again as much, 1 = twice as much, -0.5 = half less */
+	word-spacing: -0.5em;				/* ditto, for words */
+	line-height: 2em;						/* ditto, for space between lines */
+	text-transform: uppercase;	/* or capitalize, lowercase */
+}

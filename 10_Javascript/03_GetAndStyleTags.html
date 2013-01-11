@@ -1,0 +1,43 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Get And Style All Tags</title>
+<link href="stylesheet.css" rel="stylesheet" type="text/css">
+
+<script>
+
+	// create a list of all bold items (do just once on load)
+	var boldItems;
+	window.onload = getBold();
+	
+	function getBold() {
+		boldItems = document.getElementsByTagName('strong');		// get all <strong> tags
+	}
+	function highlight() {
+		for (var i=0; i<boldItems.length; i++) {								// iterate all bold tags and change color
+			boldItems[i].style.color = "red";
+		}
+	}
+	function unHighlight() {
+		for (var i=0; i<boldItems.length; i++) {
+			boldItems[i].style.color = "black";
+		}
+	}
+</script>
+
+</head>
+
+<body>
+<div id="wrapper">
+
+<p>[ <a href="#" onMouseOver="highlight()" onMouseOut="unHighlight()">hover to highlight bold items</a> ]</p>  
+
+<p id="highlightBold">
+<strong>Lorem</strong> ipsum dolor sit amet, <strong>consectetur</strong> adipiscing elit. Ut sollicitudin nunc ut lectus vehicula et <strong>tincidunt</strong> risus bibendum.<strong> Maecenas</strong> nisl dui, imperdiet ac rhoncus sed, gravida convallis lorem. Ut <strong>tincidunt</strong> arcu vel urna ornare ac varius mauris <strong>scelerisque</strong>. Praesent lacinia velit id est <strong>mattis</strong> quis faucibus erat viverra. Duis massa ante, <strong>gravida</strong> sit amet tempor id, bibendum a est. Nunc eget <strong>ipsum</strong> magna, sit amet sodales <strong>ligula</strong>. Pellentesque elit <strong>ipsum</strong>, luctus sed imperdiet et, iaculis ut urna. <strong>Aenean</strong> a metus quis turpis varius porttitor ac non leo. <strong>Pellentesque</strong> habitant morbi tristique senectus et <strong>netus</strong> et malesuada fames ac turpis egestas. Nam ac <strong>porta</strong> nisl. Proin eros <strong>mauris</strong>, commodo id <strong>congue</strong> nec, pharetra rutrum elit. </p>
+
+</div>
+<!-- end wrapper -->
+
+</body>
+</html>
