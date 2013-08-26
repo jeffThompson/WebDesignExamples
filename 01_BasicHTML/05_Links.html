@@ -1,33 +1,55 @@
+
+<!--	LINKS
+		Jeff Thompson | 2012-13 | www.jeffreythompson.org
+
+		Websites wouldn't be very interesting if you couldn't get from one to another. This
+		network of connections is why we call it 'the web'.
+
+		A link is created with in several parts:
+			+ the 'anchor' tag or <a>
+			+ the URL within the anchor tag with the attribute 'href'
+			+ the link's text that the user sees
+
+		For example:
+			<a href='http://www.amazon.com'>Amazon</a>
+
+		Anything can be a link! Text, images, sections of the page...
+		-->
+
+
 <!DOCTYPE html>
-<html>	
 	<head>
-		<title>This is (perhaps) my first website!</title>
+		<title>Links</title>
 	</head>
 
 	<body>
-	
-	<!-- LINKS -->
-	<p>
-		A basic link sends to you to another page; the code is 'inline', or within
-		the line of text.  The anatomy of a link:
-		
-		<!-- note, we have to use special characters for the < and > so they
-			 don't make a real link! see otherStuff.html for more info and examples -->
-		    <pre>&lt;a href="anotherPage.html"&gt;the text that will be a link&lt;/a&gt;</pre>
-		
-		<strong>a</strong> means 'anchor', which is a link; <strong>href</strong> is where you put the address you
-		want to link to.
+		<p>
+			A basic link sends to you to another page; the code is 'inline', or within
+			the line of text.  The anatomy of a link:
 
-		<br /><br />
-		Links to <a href="01_FirstPageEver.html">internal pages</a>, in the same folder, can be listed as simply the filename.
-		
-		<br /><br />
-		Links to <a href="http://www.amazon.com">external pages</a> (on another site) should always include the full URL including
-		the 'http://' part.
+			<br /><br />
+			
+			<!-- 	note, we have to use special characters for the < and > so they
+				 	don't make a real link! see '04_TextFormatting.html' for more info -->
+			
+			<code>  &lt;a href="anotherPage.html"&gt;the text that will be a link&lt;/a&gt;</code>
+		</p>
 
-		<br /><br />		
-		To link into a <a href="exampleOfASubfolder/catGuitar.gif">subfolder</a> (perhaps of images), use the nameOfFolder/nameOfFile.extension
-	</p>
+		<p>
+			<!--	link to another page in the same folder -->
+			Links to <a href="01_FirstPageEver.html">internal pages</a>, in the same folder, can be listed as simply the filename.
+			
+			<br /><br />
+
+			<!--	link to a page (or other item) in a subfolder -->
+			To link into a <a href="example-of-a-subfolder/catguitar.gif">subfolder</a> (perhaps of images), use the <code>nameOfFolder/nameOfFile.extension</code>
+
+			<br /><br />
+
+			<!--	link to a page on another site -->
+			Links to <a href="http://www.amazon.com">external pages</a> (on another site) should always include the full URL including
+			the <code>http://</code> part.
+		</p>
 	
 	</body>
 </html>
