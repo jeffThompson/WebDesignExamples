@@ -1,0 +1,102 @@
+/*
+CSS POSITIONING
+Jeff Thompson | 2013 | www.jeffreythompson.org
+
+While not always the best choice, CSS allows for lots
+of control over positioning, layer order, and rotation
+of elements.
+
+POSITION
+	Fixed: 		places item relative to browser window
+	Absolute: 	places item relative to its parent element (something
+				it is contained within)
+	Relative: 	moves an item relative to its normal position
+
+	Position can be listed as top, left, and right (bottom will likely
+	not work - a bane of web designers...)
+
+Z-INDEX
+	The z-index parameter changes if it on top or below
+	another element - a higher number will be on top of
+	elements with a lower z-index; a z-index of -1 will
+	ALWAYS be behind everything else, even if it is drawn
+	onscreen after another element
+
+ROTATION
+	Rotating an element is really easy, but we have to specify
+	the rotation with two extra declarations to ensure it
+	works on all browsers.
+
+SEE ALSO
+	+ CSS transform can do lots of other cool stuff!
+	+ try the 'clip' property - http://www.w3schools.com/css/tryit.asp?filename=trycss_clip
+*/
+
+/* first, we apply a sort of 'reset' to the main
+elements of our page to clear any default style
+from the browser - this is a common practice known
+as CSS reset, and can often be quite a bit more complex */
+html, body, p {
+	margin: 0;		/* try commenting out these lines and see what happens! */
+	padding: 0;
+}
+
+/* the "W" on our page */
+#wolf {
+	font-family: Helvetica, Arial, sans-serif;
+	font-size: 400px;
+	color: rgb(50,50,50);
+	position: fixed;		/* place relative to browser window */
+	left: 50px;				/* 50 pixels from left edge of window */
+	top:  0px;				/* 0 doesn't need a unit - 0px = 0em = 0 inches! */
+	
+	/* try applying the z-index parameter to both elements
+	and see how it changes which one is on top */
+	z-index: -1;
+}
+
+/* the "R" on our page */
+#redRidingHood {
+	font-family: Times, serif;
+	font-size: 800px;
+	color: rgb(200,0,0);
+	position: fixed;
+	top: -200px;			/* values can be negative too! */
+	right: 50px;			
+	
+	/* Try resizing your browser window - notice that 
+	the "R" floats across the screen? This is because
+	it is fixed 50 pixels from the right edge, which is
+	moving! */
+	
+	/* rotation! */
+	transform: rotate(12deg);
+	-ms-transform: rotate(12deg); 		/* for Internet Explorer 9 */
+	-webkit-transform: rotate(12deg); 	/* for Safari/Chrome */
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
