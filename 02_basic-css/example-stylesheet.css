@@ -48,10 +48,10 @@ html, body {
 	background-color: #C90;		/* change background color for entire document*/
 }
 
-h1 {												/* changes all <h1> instances */
+h1 {																						/* changes all <h1> instances */
 	font-family: Arial, Helvetica, sans-serif;		/* define fonts to "degrade gracefully" is not present on user's computer */
-	color: #555;									/* make text dark-ish gray */
-	font-size: 24px;								/* change font size - essentially equivelant to pt measurement in Word, etc */
+	color: #555;																	/* make text dark-ish gray */
+	font-size: 24px;															/* change font size - essentially equivelant to pt measurement in Word, etc */
 }
 
 /* ... same as <h1> but for paragraph text */
@@ -72,11 +72,11 @@ p {
 
 
 /* LINKS -- change what they look like, and how they react when hovered over */
-a:link, a:visited {					/* basic link and one that has been clicked previously */
+a:link, a:visited {							/* basic link and one that has been clicked previously */
 	color: #F00;
-	text-decoration: none;			/* ie: no underline */
+	text-decoration: none;				/* ie: no underline */
 }
-a:hover, a:active {					/* hover and active are when hovered (duh) or clicked on */
+a:hover, a:active {							/* hover and active are when hovered (duh) or clicked on */
 	color: #00F;
 	text-decoration: underline;		/* when hovered, underline so we know */
 }
@@ -87,24 +87,24 @@ a:hover, a:active {					/* hover and active are when hovered (duh) or clicked on
 
 /* DEFINE A CUSTOM WRAPPER USING CSS AND A <div> tag */
 #wrapper {
-	width: 900px;					/* width is measured in pixels */
+	width: 900px;									/* width is measured in pixels */
 	margin: 20px auto 20px auto;	/* margins are space AROUND something; listed as top, right, bottom, left (see note) */
-	background-color: white;		/* separate background color for the div; here we use one of the constant color values */
-	padding: 50px;					/* padding is space INSIDE something; this offsets the text so it doesn't hit the edge of the div */
+	background-color: white;			/* separate background color for the div; here we use one of the constant color values */
+	padding: 50px;								/* padding is space INSIDE something; this offsets the text so it doesn't hit the edge of the div */
 }
 
 /*	NOTE: by setting our margin on L/R as auto, the <div> will float in the center of the screen until resized small
 	than the width of the div */
 
-/* A DIV INSIDE A DIV -- here we use a class (for deomonstration purposes, notice nothing breaks when we do this :) */
+/* A DIV INSIDE A DIV -- here we use a class (for demonstration purposes, notice nothing breaks when we do this :) */
 .nestedDiv {
 	width: 600px;
 	margin: 0px auto 0px auto;
-  	padding-top: 15px;						/* one direction can be specified separately, if necessary */
+  	padding-top: 15px;									/* one direction can be specified separately, if necessary */
 	background-color: #000;
-  	border: 3px #00FF00 dashed;				/* borders can applied to anything; specify thickness, color, and style (solid, dotted, etc) */
+  	border: 3px #00FF00 dashed;					/* borders can applied to anything; specify thickness, color, and style (solid, dotted, etc) */
 }
-.nestedDiv p {								/* only for paragraphs inside the nestedDiv */
+.nestedDiv p {													/* only for paragraphs inside the nestedDiv */
 	color: rgb(255,255,255) !important;		/* sometimes things don't work quite right - !important means override anything else in favor of this style */
 	text-align: center;
 }
