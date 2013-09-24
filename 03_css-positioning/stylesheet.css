@@ -48,11 +48,11 @@ html, body, p {
 	color: rgb(50,50,50);
 	position: fixed;		/* place relative to browser window */
 	left: 50px;				/* 50 pixels from left edge of window */
-	top:  0px;				/* 0 doesn't need a unit - 0px = 0em = 0 inches! */
+	top:  -22px;				/* 0 doesn't need a unit - 0px = 0em = 0 inches! */
 	
 	/* try applying the z-index parameter to both elements
 	and see how it changes which one is on top */
-	z-index: -1;
+
 }
 
 /* the "R" on our page */
@@ -64,13 +64,27 @@ html, body, p {
 	top: -200px;			/* values can be negative too! */
 	right: 50px;			
 	
+	z-index: 10000;
+	
 	/* Try resizing your browser window - notice that 
 	the "R" floats across the screen? This is because
 	it is fixed 50 pixels from the right edge, which is
 	moving! */
 	
 	/* rotation! */
-	transform: rotate(12deg);
-	-ms-transform: rotate(12deg); 		/* for Internet Explorer 9 */
-	-webkit-transform: rotate(12deg); 	/* for Safari/Chrome */
+	transform: rotate(-70deg);
+	-ms-transform: rotate(-70deg); 		/* for Internet Explorer 9 */
+	-webkit-transform: rotate(-70deg); 	/* for Safari/Chrome */
 }
+
+
+
+
+
+
+
+
+
+
+
+
