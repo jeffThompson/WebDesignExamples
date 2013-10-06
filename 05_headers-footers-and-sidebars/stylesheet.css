@@ -3,6 +3,7 @@
 
 html, body {
 	background-color: white;	/* even though it's likely the default, better to declare it */
+	font-family: Helvetica, Arial, sans-serif;
 }
 
 /* MENU LINKS */
@@ -39,7 +40,7 @@ li a:active, li a:hover {
 	padding: 0 10px 0 10px;
 	color: white;
 	background-color: rgb(0,0,0);					/* fallback for older browsers */
-	background-color: rgba(0,0,0, 0.5);		/* rgba means ALPHA */
+	background-color: rgba(0,0,0, 0.5);		/* rgba means ALPHA, or transparency */
 	
 	/* more details at: http://stackoverflow.com/a/4717600 (we could use the CSS opacity, but this would affect the text too!) */
 }
