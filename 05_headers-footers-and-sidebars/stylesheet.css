@@ -1,5 +1,19 @@
 @charset "UTF-8";
-/* CSS Document */
+
+/*
+HEADERS, FOOTERS, AND SIDEBARS
+Jeff Thompson | 2013 | www.jeffreythompson.org
+
+A basic CSS layout for creating headers, footers, and sidebars
+using margin, padding, and float properties.
+
+Trying to decide what width to make your site? Look at W3C's historical
+statistics:
+http://www.w3schools.com/browsers/browsers_resolution_higher.asp
+
+As of 2013, 90% of users had screen widths above 1024px. Or check your own analytics!
+
+*/
 
 html, body {
 	background-color: white;	/* even though it's likely the default, better to declare it */
