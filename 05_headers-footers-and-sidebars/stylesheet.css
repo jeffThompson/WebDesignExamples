@@ -1,140 +1,128 @@
-@charset "UTF-8";
-
-/*
-HEADERS, FOOTERS, AND SIDEBARS
-Jeff Thompson | 2013 | www.jeffreythompson.org
-
-A basic CSS layout for creating headers, footers, and sidebars
-using margin, padding, and float properties.
-
-Trying to decide what width to make your site? Look at W3C's historical
-statistics:
-http://www.w3schools.com/browsers/browsers_resolution_higher.asp
-
-As of 2013, 90% of users had screen widths above 1024px. Or check your own analytics!
-
-*/
-
+/* css reset */
+		  
 html, body {
-	background-color: white;	/* even though it's likely the default, better to declare it */
+	background-color: rgb(255,255,255);
 	font-family: Helvetica, Arial, sans-serif;
 }
 
-/* MENU LINKS */
-/* style list links differently */
-li a, li a:link, li a:visited {
-	color: black;
-	text-decoration: none;
-}
-li a:active, li a:hover {
-	color: white;
-	text-decoration: none;
+.clear {
+	clear: both;
 }
 
 /* WRAPPER */
-/* this has the usual width and float to center stuff */
 #wrapper {
-	width: 700px;
-	margin: -10px auto 30px auto;		/* the negative direction at the top is to ensure that the top edge hits the top of the window... */
-	background-color: rgb(200,150,0);	/* we set the background color to the same as the sidebar so it doesn't hang weirdly */
+	width: 700px;												/* or in %: 70% */
+	margin: -22px auto 30px auto;				/* top, right, bottom, left */
+	background-color: rgb(255,150,255);
 	
-	/* add a cool 'box shadow' */
-	/* the parameters are a bit confusing, so see: http://www.css3.info/preview/box-shadow */
-	-moz-box-shadow: 0 5px 15px #999;
-	-webkit-box-shadow: 0 5px 15px #999;
-	box-shadow: 0 5px 15px #999;
+	/* box-shadow */
+	/*  skeumorphism - design things to look like other things
+		  "flat" design */
+	-moz-box-shadow: 0 5px 15px rgb(200,200,200);
+	-webkit-box-shadow: 0 5px 15px rgb(200,200,200);
+	box-shadow: 0 5px 15px rgb(200,200,200);
 }
 
-/* BONUS (added after everything else) */
-/* here we add a fixed login at the top */
+/* LOGIN */
 #login {
-	width: 680px;
+	width: 680px;;
+	background-color: rgb(0,0,0);				/* default color */
+	background-color: rgba(0,0,0, 0.5);	/* a = alpha */
+	color: white;
+	padding: 10px;
 	position: fixed;
-	top: 0px;
-	padding: 0 10px 0 10px;
-	color: white;
-	background-color: rgb(0,0,0);					/* fallback for older browsers */
-	background-color: rgba(0,0,0, 0.5);		/* rgba means ALPHA, or transparency */
-	
-	/* more details at: http://stackoverflow.com/a/4717600 (we could use the CSS opacity, but this would affect the text too!) */
+	top: 0;
 }
-#login a, #login a:link, #login:visited {
-	color: white;
-	text-decoration: none;	
-}
-#login a:active, #login a:hover {
-	color: white;
-	text-decoration: underline;
-}
+
 
 /* HEADER */
-/* the header will have the site's main title and (later) a horizontal menu */
 #header {
-	background-color: rgb(220,170,0);
-	padding: 20px;
+	clear: both;
+	background-color: rgb(255,255,150);
+	padding: 20px;	/* 1 value applies to all 4 directions */
+	margin-top: 50px;
 }
+
+#mainLogo {
+	width: 100px;
+	float: left;
+}
+
 #header h1 a, #header h1 a:link, #header h1 a:visited {
-	color: #000;
+	float: left;
+	color: rgb(0,0,0);
 	text-decoration: none;
 }
 #header h1 a:active, #header h1 a:hover {
-	color: #FFF;
+	color: rgb(255,255,255);
 	text-decoration: none;
 }
-
-/* advanced: a horizontal menu using unordered list */
 #header ul {
-	margin-bottom: -10px;  /* squish the menu down to the bottom */
-	margin-left: -40px;	/* a hack to get the menu to align with the headline text */
+	margin-left: -40px;
+	margin-bottom: -10px;
 }
 #header li {
-	display: inline;		/* this makes the list horizontal */
-	list-style: none;	  /* again, no bullets */
-	padding: 10px;			/* space in between */
-	border-right: 1px solid white;
-	margin-right: -4px;
+	list-style: none;
+	display: inline;
+	padding: 10px;
+	border-right: 1px solid rgb(0,0,0);
 }
-
-/* a neat trick: this allows us to put the border on the left of the first <li> only */
-/* NOTE: this is not super well-supported in older browsers :( */
-#header li:first-child {	/* this is called a 'selector' in CSS */
-	border-left: 1px solid white;
+/* css selector */
+#header li:first-child {		/* selects first li element in the list */
+	border-left: 1px solid rgb(0,0,0);
 }
 
 /* SIDEBAR */
-/* the sidebar can go on the L or R side and usually has a menu and/or meta info */
 #sidebar {
 	float: left;
 	width: 200px;
-	background-color: rgb(200,150,0);
+	background-color: rgb(255,150,255);
 	padding: 20px;
 }
-
-/* format lists for menu ONLY in the sidebar */
 #sidebar ul {
-	border-top: 1px solid white;
+	border-top: 1px solid rgb(255,255,255);
 }
 #sidebar li {
-	margin-left: -40px;
 	list-style: none;
+	margin-left: -40px;
 	padding: 8px;
-	background-color: rgb(180,120,0);
-	border-bottom: 1px solid white;
+	background-color: rgb(180,120,200);
+	border-bottom: 1px solid rgb(255,255,255);
+}
+#sidebar li:hover {
+	background-color: rgb(220,210,255);
 }
 
-/* MAIN CONTENT */
-/* this is where your main stuff would go, be it an article, a video, or a product */
+/* CONTENT */
 #content {
-	float: left;												/* also float left so it goes next to the sidebar */
-	width: 420px;												/* this should be the wrapper minus sidebar and padding on both */
-	background-color: rgb(180,120,0);
+	float: left;
+	width: 420px;
+	background-color: rgb(255,200,200);
 	padding: 20px;
 }
 
 /* FOOTER */
-/* the footer sits at the bottom */
 #footer {
-	clear: both;					/* this clears the formatting from the sidebar/content - not having this will cause weird problems */
-	background-color: rgb(220,170,0);
+	
+	background-color: rgb(150,255,255);
 	padding: 20px;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
