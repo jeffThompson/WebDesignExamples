@@ -11,6 +11,7 @@
 <html>
 	<head>
 		<title>Dropdowns With CSS</title>
+		<link href="stylesheet.css" rel="stylesheet" type="text/css" />
 	</head>
 
 	<body>
@@ -21,18 +22,43 @@
 				<h1>TEST SITE</h1>
 				
 				<!-- DROPDOWN MENU IS HERE! -->
-				<ul class="dropdown">
-					<li>Books</li>
-					<li>DVDs</li>
-					<li>Music</li>
-					<li>Kittens</li>
-					<li>Monsters</li>
-				</ul>
-				
+				<nav>
+					<ul>
+						<!-- menu item 1: home link -->
+						<li><a href="#">HOME</a></li>
+					
+						<!-- menu item 2: dropdown of foods -->
+						<li><a href="#">FRUITS/VEGGIES</a>
+							<ul>
+								<li><a href="#">Oranges</a></li>
+								<li><a href="#">Bananas</a></li>
+								<li><a href="#">Apples</a></li>
+								<li><a href="#">Blueberries & Raspberries</a></li>
+								<li><a href="#">Kale</a></li>
+								<li><a href="#">Brussel Sprouts</a></li>
+								<li><a href="#">Carrots</a></li>
+							</ul>
+						</li> <!-- end menu item 2 -->
+					
+						<!-- menu item 3: other things -->
+						<li><a href="#">THINGS</a>
+							<ul>
+								<li><a href="#">Kittens</a></li>
+								<li><a href="#">Ping Pong</a></li>
+								<li><a href="#">Falafel</a></li>
+								<li><a href="#">Hand Saws</a></li>
+								<li><a href="#">Bubble Wrap</a></li>
+							</ul>
+						</li> <!-- end menu item 3 -->
+					</ul> <!-- end menu -->
+				</nav>
+								
 			</div> <!-- end header -->
 			
 			<div id="content">
-				<p>Test</p>
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Maecenas sodales urna quis condimentum placerat. Phasellus at hendrerit magna, cursus tempus risus. Pellentesque porta sapien adipiscing, faucibus velit at, feugiat dui. Integer est tortor, mattis quis nunc sit amet, bibendum porta nibh. Proin molestie euismod turpis vitae malesuada. Sed dolor risus, interdum vel felis non, laoreet mattis sapien. Sed rutrum ipsum sit amet elementum interdum.</p>				
+				<p>Donec sapien arcu, condimentum et lacus sit amet, dapibus gravida massa. Quisque vitae metus eget tellus adipiscing accumsan. In enim velit, interdum vel dapibus hendrerit, dignissim quis sapien. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Cras non augue in nibh consectetur pretium ac in enim. Mauris hendrerit venenatis sollicitudin. Integer bibendum risus at magna lobortis, at aliquet tellus tristique.
+				<p>Etiam posuere semper tincidunt. Nam ut ante consectetur, ultrices massa eu, tempor nisi. Sed sapien justo, ultricies ut odio eget, ullamcorper consequat sapien. Etiam condimentum purus sit amet eros posuere tempus. Sed ultrices quam id ipsum tempus, et placerat dolor ullamcorper. Fusce rutrum mollis porta. Aenean ullamcorper ultrices ultricies.</p>
 			</div> <!-- end content -->
 		
 		</div> <!-- end wrapper -->

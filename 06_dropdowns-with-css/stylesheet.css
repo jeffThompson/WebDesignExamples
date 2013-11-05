@@ -1,0 +1,82 @@
+/* 
+	DROPDOWN STYLESHEET
+	Jeff Thompson | 2013 | www.jeffreythompson.org
+	
+	A CSS-only dropdown menu.
+	
+	Based on this great tutorial:
+	+ http://line25.com/tutorials/how-to-create-a-pure-css-dropdown-menu
+	
+	*/
+
+/* BASIC CSS */
+html, body {
+	font-family: Helvetica, Arial, sans-serif;
+	background-color: rgb(30,30,30);
+}
+#wrapper {
+	width: 900px;
+	margin: 0 auto 0 auto;
+}
+#header {
+	background-color: rgb(245,245,245);
+	padding: 40px;
+}
+#content {
+	background-color: white;
+	padding: 40px;
+}
+
+/* MAIN MENU CSS */
+nav a, a:hover {
+	text-decoration: none;
+}
+nav ul {
+	background: rgb(150,150,150);
+	list-style: none;						/* no bullets */
+	position: relative;					/* let's us display dropdown using absolute positioning */
+	display: inline-table;			/* condenses to fit text width */
+	margin: 0;									/* get rid of space around menu; try adding for different style */
+	padding: 0;
+	text-align: center;					/* optional: try with 'left' instead */
+}
+nav ul li {
+	float: left;								/* place side-by-side! */
+}
+nav ul li:hover {
+	background: rgb(80,80,80);	/* change color on hover */
+}
+nav ul li:hover a {
+	color: white;								/* change text color on hover */
+}
+nav ul li a {
+	display: block;							/* hard to explain: try commenting out and see what happens! */
+	min-width: 100px;						/* optional: set minimum width for menu */
+	padding: 10px 20px;
+	color: black;
+}
+
+/* DROPDOWN CSS (nested 'ul') */
+nav ul ul {
+	display: none;							/* don't display until hovered */
+	position: absolute;					/* position just below parent ul */
+	top: 100%;
+	padding: 0;									/* remove excessive padding */
+	text-align: left;						/* optional: align dropdown text to left */
+	background: rgb(80,80,80);	/* change background color of dropdown */
+}
+nav ul li:hover > ul {
+	display: block;							/* on hover of child (using > selector), display again! */
+}
+nav ul ul li {
+	float: none;								/* clear float */
+	position: relative;					/* reset positioning */
+}
+nav ul ul li a {
+	padding: 10px 20px;					/* add some link padding */
+	min-width: 150px;						/* optional: minimum width for dropdown */
+	color: black;
+}
+nav ul ul li a:hover {
+	background: rgb(50,50,50);	/* slightly darker color for hovered dropdown */
+}
