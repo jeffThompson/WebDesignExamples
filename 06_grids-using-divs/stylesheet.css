@@ -1,0 +1,56 @@
+/*
+	GRIDS USING DIVS
+	Jeff Thompson | 2013 | www.jeffreythompson.org
+	
+	Grid layouts are possible using float/clear, though responsive
+	design requires some fancier methods.
+	
+	FURTHER READING:
+	+ Basics of floats and clear:
+		- http://css-tricks.com/all-about-floats
+	+ Fancier version using inline-block instead (a great way 
+		to start learning about responsive design:
+		- http://learnlayout.com/inline-block.html
+*/
+
+html, body {
+	background: rgb(100,90,80);
+	font-family: Arial, Helvetica, sans-serif;
+	font-size: 14px;
+	color: black;
+}
+
+/* 	a 'utility' class to clear floats */
+.clear {
+	clear: both;
+}
+
+/* 	overall wrapper */
+#wrapper {
+	width: 900px;
+	margin: 0 auto 0 auto;
+	padding: 30px;
+	background: white;
+}
+
+/* 	a class for each grid cell */
+/* 	note on the width: we have to do a little math (and probably some trial and error) to set the width */
+.grid {
+	width: 258px;
+	margin: 10px;
+	padding: 10px;
+	float: left;
+	border: 1px black solid;
+}
+
+/*	extra styling using CSS selectors! */
+.grid:nth-child(odd) {
+	background: rgb(255,150,0);
+}
+.grid:nth-child(even) {
+	background: rgb(255,255,0);
+}
+.grid:hover {
+	color: white;
+	background: rgb(50,100,100);
+}
