@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* CSS Document */
 
 /* Yahoo's YUI Reset, version 3.5.0
 	 This makes sure that any existing CSS is cleared; this code is
@@ -48,7 +47,7 @@ a:hover {
 }
 #sidebar li {
 	list-style: none;
-	/* margin-left: -40px; */ /* margin is already reset in the YUI Reset */
+	/* margin-left: -40px; */ 	/* margin is already reset in the YUI Reset! */
 }
 
 #main {
