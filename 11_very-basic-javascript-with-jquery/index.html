@@ -1,0 +1,97 @@
+
+<!--
+	VERY BASIC JAVASCRIPT USING JQUERY
+	Jeff Thompson | 2013 | www.jeffreythompson.org
+	
+	Javascript is a client-side scripting language, meaning it
+	runs in the visitor's browser (as opposed to client-side, such
+	as PHP, that runs on the server before being sent to the visitor).
+	This allows for interactivity, animations, and other cool stuff!
+	
+	JQuery is the most popular extension for Javascript, and allows
+	for very nice, easy animations and transitions that can turn
+	a static site into something that looks great and profession (when
+	used tastefully and carefully - too much will look bad!)
+	
+	You can find out lots more here:
+	http://api.jquery.com
+	
+	All Javascript happens within the <script> tag, usually in the <head>
+	section of the site.	
+	-->
+
+<html>
+	<head>
+		<title>Very Basic Javascript Using JQuery</title>
+		<link href="stylesheet.css" rel="stylesheet" type="text/css" />
+		
+		<!-- import JQuery directly from the JQuery website; this allows you to
+				 use the code anywhere in this page -->
+		<script src="http://code.jquery.com/jquery-1.10.1.min.js"></script>
+	
+		<!-- all the other scripting happens here in the <head> tag! -->
+		<script>
+		
+			// this is a single-line comment in Javascript
+			/* and this is a multi-line comment, just like in CSS and
+				 useful for longer explanations! */
+			
+			// this code executes only after the entire document has loaded
+			// no need to worry too much about all the brackets, at least for now :)
+			$(document).ready(function() {
+			
+					// JQuery allows us to select items in the Document Object Model (DOM),
+					// which is really just a fancy term for the HTML page! Selections can be
+					// made just like CSS for tags, classes, or IDs
+					
+					// this changes all <p> tags' CSS so their background color is yellow
+					$('p').css ({
+						'background-color': 'rgb(255,255,0)'
+					});
+					
+					// this selects all paragraphs and replaces the text with new text
+					$('#quickBrownFox').click(function() {
+						$('p').replaceWith('<p>The quick brown fox jumped over the lazy dog.</p>');
+					});
+									
+					// JQuery is a bit full of () and {} and 'function', but once
+					// you get the hang of the basic pattern, it's easy to adjust the
+					// basic structure for your needs
+					
+					// this selects something with the ID of 'toggleParagraphVisibility',
+					// then runs an animation when it is clicked...
+					$('#toggleParagraphVisibility').click(function() {
+						// when clicked, run a built-in JQuery animation on a paragraphs
+						// this shows/hides them by sliding up/down over x milliseconds (1000ms = 1sec)
+						$('p').slideToggle(1000);
+					});					
+			});
+		
+		</script>
+	</head>
+
+	<body>
+	
+		<div id="wrapper">
+			
+			<div id="main">
+				<h1><a id="toggleParagraphVisibility" href="javascript:void(0)">TOGGLE PARAGRAPH VISIBILITY</a></h1>
+				<h1><a id="quickBrownFox" href="javascript:void(0)">QUICK BROWN FOX</a></h1>
+
+				<p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus vel leo quis elit vestibulum vestibulum. Praesent sed est risus. Praesent elementum gravida lacus, ac egestas mi cursus non. Vestibulum sodales venenatis libero eget eleifend. Curabitur adipiscing dictum ipsum id placerat. Aenean mattis vehicula cursus. Cras purus ligula, adipiscing et tristique eu, adipiscing non neque. Vestibulum non diam at metus venenatis laoreet.</p>
+
+				<p>In posuere tristique dictum. Suspendisse potenti. Suspendisse quis tristique tellus. Donec sit amet sem nunc. Vestibulum commodo urna non libero varius consectetur. In hac habitasse platea dictumst. Cras sollicitudin urna non augue aliquam pellentesque.</p>
+
+				<p>Vivamus vehicula augue sit amet nibh volutpat sed tempus metus cursus. Nulla facilisi. Fusce vitae justo at metus bibendum malesuada non nec nisi. Proin porta urna at ligula imperdiet in mollis dolor condimentum. Curabitur eleifend nibh in diam iaculis sit amet suscipit urna rutrum. Duis condimentum rhoncus cursus. Cras et sem ullamcorper diam sollicitudin vestibulum. Nulla at condimentum nisl. Phasellus posuere, augue porttitor mollis condimentum, eros justo sollicitudin purus, vel auctor lectus nisi non mauris. Pellentesque habitant morbi tristique senectus et netus et malesuada fames ac turpis egestas. Duis eleifend ipsum quis purus placerat vel ultrices velit egestas. Aenean lobortis, eros et dictum elementum, ligula elit vestibulum felis, imperdiet viverra lacus ligula nec sapien. Proin vitae erat lacus. Vestibulum semper augue id ligula interdum quis placerat ligula faucibus. Phasellus mattis dolor odio, vel hendrerit enim.</p>
+
+				<p>Donec id nibh odio, eget sodales nisi. Praesent vitae urna ante, at egestas odio. Curabitur non metus vel neque cursus vestibulum. Praesent nec pharetra nibh. Curabitur nec sem justo. Pellentesque non nisl ut tellus faucibus porta a sit amet sapien. Lorem ipsum dolor sit amet, consectetur adipiscing elit.</p>
+
+				<p>Aenean varius libero ut ligula hendrerit non varius augue vestibulum. Vivamus scelerisque lorem leo. Maecenas varius, nulla euismod bibendum sollicitudin, mauris lorem blandit ligula, sed feugiat velit eros vel quam. Nullam tempor sagittis placerat. Praesent non cursus lectus. Quisque eleifend tortor ac est eleifend aliquam. In commodo dolor quis ligula dapibus at tincidunt ante imperdiet. Integer mollis egestas purus, eget condimentum dolor porta sed. In vitae sagittis diam. Maecenas ut nisl lectus. Vestibulum sit amet sem quis dui porttitor rhoncus sed non arcu. Quisque at nunc ac augue condimentum commodo sed sed massa. Vestibulum eu molestie sem.</p>
+
+				<p>Maecenas porttitor sapien diam, fermentum malesuada magna. Nullam vel augue magna, rhoncus iaculis erat. Aenean lobortis mauris quis arcu dapibus gravida feugiat augue porttitor. Suspendisse pharetra cursus urna, eget dictum dui pretium et. Nunc euismod tellus in magna elementum rutrum. Proin diam elit, aliquet vitae aliquam eget, fringilla sit amet ipsum. Ut mi nunc, laoreet nec viverra sit amet, ornare lobortis augue. Sed cursus dapibus elit, et consectetur turpis fringilla nec. Aenean rutrum consectetur pharetra. Donec pellentesque, lectus non tincidunt luctus, nunc nisl imperdiet dui, at consectetur ligula nibh quis elit. Praesent pharetra euismod molestie. Sed eget nulla ut elit luctus hendrerit. Etiam vel arcu et orci consectetur accumsan non gravida eros. Suspendisse porttitor laoreet enim, non ullamcorper arcu fermentum id. Praesent at felis ligula. Morbi eu urna lacus, ac porttitor lorem.</p>			
+			</div> <!-- end main -->
+			
+		</div> <!-- end wrapper -->
+
+	</body>
+</html>

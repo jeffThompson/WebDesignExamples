@@ -1,0 +1,74 @@
+
+@charset "UTF-8";
+
+/* 
+	GRIDS
+	Jeff Thompson | 2014 | www.jeffreythompson.org
+	
+	Grid layouts are possible using float/clear, but a 'responsive'
+	layout, though a bit tricker, is much better for users with
+	different screen sizes (and a great introduction to responsive
+	web design).
+*/
+
+
+/* 	CSS RESET */
+/*	this bit of code 'resets' all the annoying presets from your browser, making
+	layout a LOT easier */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,img,ins,kbd,q,s,samp,small,strike,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+body{line-height:1}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+table{border-collapse:collapse;border-spacing:0}
+
+
+/*	MAIN CSS */
+html, body {
+	background: rgb(240,240,240);
+	font-family: Arial, Helvetica, sans-serif;
+	color: black;
+}
+
+/* 	a 'utility' class to clear floats */
+.clear {
+	clear: both;
+}
+
+/* 	overall wrapper */
+#wrapper {
+	width: 90%;					/* a 'responsive' layout adapts to the screen size */
+	min-width: 320px;			/* set a minimum size (320 = width of iPhone) */
+	max-width: 900px;			/* ...and a max size too */
+
+	margin: 0 auto 30px auto;	/* center the wrapper */
+	background: white;
+}
+
+/* 	GRID ELEMENTS */
+/* 	note on the width: we have to do a little math (and probably some trial and error) to set the width */
+.grid {
+	text-align: center;					/* since the grid is really text, align-center puts items in the middle! */
+	width: 100%;						/* set overall list to the width of the wrapper */
+}
+.grid li {
+	display: inline-block;				/* display as block element */
+	width: 220px;						/* arbitrary width */
+	margin: 20px;						/* space between grid items */
+	padding: 10px 0;					/* padding inside */
+	border: 1px rgb(255,0,0) solid;		/* add a border, too */
+}
+
+/*	extra styling using CSS selectors! */
+.grid li:nth-child(odd) {
+	background: rgb(255,150,0);
+}
+.grid li:nth-child(even) {
+	background: rgb(255,255,0);
+}
+.grid li:hover {
+	color: white;
+	background: rgb(50,100,100);
+	border: 1px rgb(0,150,255) solid;
+}

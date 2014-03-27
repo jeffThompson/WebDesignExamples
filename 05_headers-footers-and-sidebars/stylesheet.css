@@ -1,128 +1,134 @@
-/* css reset */
-		  
-html, body {
-	background-color: rgb(255,255,255);
-	font-family: Helvetica, Arial, sans-serif;
-}
+@charset "UTF-8";
+
+/*
+HEADERS, FOOTERS, AND SIDEBARS
+Jeff Thompson | 2013 | www.jeffreythompson.org
+
+A basic CSS layout for creating headers, footers, and sidebars
+using margin, padding, and float properties.
+
+Trying to decide what width to make your site? Look at W3C's historical statistics:
++ http://www.w3schools.com/browsers/browsers_resolution_higher.asp
+
+As of 2013, 90% of users had screen widths above 1024px. Or check your own analytics!
+*/
+
+/* 	CSS RESET */
+/*	this bit of code 'resets' all the annoying presets from your browser, making
+	layout a LOT easier */
+html,body,div,span,applet,object,iframe,h1,h2,h3,h4,h5,h6,p,blockquote,pre,a,abbr,acronym,address,big,cite,code,del,dfn,img,ins,kbd,q,s,samp,small,strike,sub,sup,tt,var,b,u,i,center,dl,dt,dd,ol,ul,li,fieldset,form,label,legend,table,caption,tbody,tfoot,thead,tr,th,td,article,aside,canvas,details,embed,figure,figcaption,footer,header,hgroup,menu,nav,output,ruby,section,summary,time,mark,audio,video{border:0;font-size:100%;font:inherit;vertical-align:baseline;margin:0;padding:0}
+article,aside,details,figcaption,figure,footer,header,hgroup,menu,nav,section{display:block}
+body{line-height:1}
+ol,ul{list-style:none}
+blockquote,q{quotes:none}
+blockquote:before,blockquote:after,q:before,q:after{content:none}
+table{border-collapse:collapse;border-spacing:0}
 
 .clear {
-	clear: both;
+	clear: both;	/* a 'utility' class that stops 'float' and places next item below */
 }
 
-/* WRAPPER */
+
+/* 	MAIN CSS */
+/*	note: due to CSS reset, we do have to specify a lot more basic things, such as the
+	size of <h1> and <p> */
+html, body {
+	background-color: rgb(150,150,150);
+	font-family: Helvetica, Arial, sans-serif;		/* declare font for the entire document */
+}
+
+h1 {
+	font-size: 3em;				/* measuring ems to be more flexible for all users 3em = 48/16 */
+}
+
+h2 {
+	font-size: 1.75em;			/* 28/16 */
+}
+
+p {
+	font-size: 0.875em;			/* 14/16 */
+	line-height: 1.3em;			/* a good rule of thumb for body text */
+	margin-bottom: 1.5em;
+}
+
+a, a:link, a:visited {
+	color: rgb(255,0,0);
+	text-decoration: none;
+}
+a:active, a:hover {
+	color: rgb(255,150,0);
+	text-decoration: none;
+}
+
+/* 	WRAPPER */
+/* 	this has the usual width and float to center stuff */
 #wrapper {
-	width: 700px;												/* or in %: 70% */
-	margin: -22px auto 30px auto;				/* top, right, bottom, left */
-	background-color: rgb(255,150,255);
-	
-	/* box-shadow */
-	/*  skeumorphism - design things to look like other things
-		  "flat" design */
-	-moz-box-shadow: 0 5px 15px rgb(200,200,200);
-	-webkit-box-shadow: 0 5px 15px rgb(200,200,200);
-	box-shadow: 0 5px 15px rgb(200,200,200);
+	width: 900px;
+	margin: 0px auto 30px auto;			/* even spacing on either side (centers the div) with some space at bottom */
+	background-color: white;
 }
 
-/* LOGIN */
-#login {
-	width: 680px;;
-	background-color: rgb(0,0,0);				/* default color */
-	background-color: rgba(0,0,0, 0.5);	/* a = alpha */
+/* 	HEADER */
+/* 	the header will have the site's main title and a horizontal menu */
+header {
+	background-color: rgb(230,230,230);
+	padding: 20px;
+}
+
+/* 	different link settings for header - this essentially says "style links (the <a> tag) that are
+	headline-1 (the <h1> tag) inside the header section (the <header> tag)" */
+header h1 a, header h1 a:link, header h1 a:visited {
+	color: black;
+	text-decoration: none;
+}
+header h1 a:active, header h1 a:hover {
 	color: white;
-	padding: 10px;
-	position: fixed;
-	top: 0;
-}
-
-
-/* HEADER */
-#header {
-	clear: both;
-	background-color: rgb(255,255,150);
-	padding: 20px;	/* 1 value applies to all 4 directions */
-	margin-top: 50px;
-}
-
-#mainLogo {
-	width: 100px;
-	float: left;
-}
-
-#header h1 a, #header h1 a:link, #header h1 a:visited {
-	float: left;
-	color: rgb(0,0,0);
 	text-decoration: none;
 }
-#header h1 a:active, #header h1 a:hover {
-	color: rgb(255,255,255);
-	text-decoration: none;
+
+/* 	advanced: a horizontal menu using unordered list */
+header ul {
+	margin: 10px 0 -10px 0;  			/* add some space at the top, squish the menu down to the bottom */
 }
-#header ul {
-	margin-left: -40px;
-	margin-bottom: -10px;
-}
-#header li {
-	list-style: none;
-	display: inline;
-	padding: 10px;
-	border-right: 1px solid rgb(0,0,0);
-}
-/* css selector */
-#header li:first-child {		/* selects first li element in the list */
-	border-left: 1px solid rgb(0,0,0);
+header li {
+	display: inline;					/* this makes the list horizontal */
+	list-style: none;	  				/* gets rid of bullets, but not needed due to CSS reset! */
+	padding-right: 20px;				/* space in between */
 }
 
-/* SIDEBAR */
+
+/* 	SIDEBAR */
+/* 	the sidebar can go on the L or R side and usually has a menu and/or meta info */
 #sidebar {
 	float: left;
 	width: 200px;
-	background-color: rgb(255,150,255);
+	background-color: white;
 	padding: 20px;
 }
+
+/* 	format lists for menu ONLY in the sidebar */
 #sidebar ul {
-	border-top: 1px solid rgb(255,255,255);
+	margin: -1em 0 2em 0;				/* typical hacking w/ CSS: move list up -1em (16px) to */
+	border-top: 1px solid white;		/* remove spacing from the <p> tag, add more space on bototm */
 }
 #sidebar li {
-	list-style: none;
-	margin-left: -40px;
-	padding: 8px;
-	background-color: rgb(180,120,200);
-	border-bottom: 1px solid rgb(255,255,255);
-}
-#sidebar li:hover {
-	background-color: rgb(220,210,255);
+	padding: 10px 0;					/* add 10px padding top/bottom, no padding right/left */
+	border-bottom: 1px solid rgb(230,230,230);
 }
 
-/* CONTENT */
+/* 	MAIN CONTENT */
+/* 	this is where your main stuff would go, be it an article, a video, or a product */
 #content {
-	float: left;
-	width: 420px;
-	background-color: rgb(255,200,200);
+	float: left;						/* also float left so it goes next to the sidebar */
+	width: 620px;						/* this should be the wrapper minus sidebar and padding on both */
+	background-color: white;
 	padding: 20px;
+	text-align: justify;
 }
 
-/* FOOTER */
+/* 	FOOTER */
+/* 	the footer sits at the bottom */
 #footer {
-	
-	background-color: rgb(150,255,255);
+	background-color: rgb(230,230,230);		/* same as header */
 	padding: 20px;
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

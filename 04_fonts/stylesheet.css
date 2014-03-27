@@ -1,5 +1,4 @@
 @charset "UTF-8";
-/* CSS Document */
 
 /*
 USING WEB FONTS
@@ -28,19 +27,19 @@ FontSquirrel		http://www.fontsquirrel.com
 @font-face {
 	font-family: 'Test Font';		/* this allows us to define an easier name for later; can be anything! */
 	
-	/* load the various versions in order of preference (with SVG last); browsers 
-		 will load the first format they allow, then ignore the rest */
-   src: url('fonts/jacklantern-webfont.eot');
-   src: url('fonts/jacklantern-webfont.eot?#iefix') format('embedded-opentype'),
+	/* 	load the various versions in order of preference (with SVG last); browsers 
+		will load the first format they allow, then ignore the rest */
+	src: url('fonts/jacklantern-webfont.eot');
+	src: url('fonts/jacklantern-webfont.eot?#iefix') format('embedded-opentype'),
          url('fonts/jacklantern-webfont.woff') format('woff'),
          url('fonts/jacklantern-webfont.ttf') format('truetype'),
          url('fonts/jacklantern-webfont.svg') format('svg');
 
-  /* note: the second url() is a hack for Internet Explorer and replaces the 'smiley face' trick */
+  	/* note: the second url() is a hack for Internet Explorer and replaces the 'smiley face' trick */
 	
 	/* make sure you reset font styling so your new font appears as desired */
 	font-weight: normal;
-  font-style: normal;
+  	font-style: normal;
 } 
 
 /* set background color */
@@ -56,7 +55,7 @@ html, body {
 	padding: 50px;
 }
 
-/* web font paragraph */
+/* change just for the 'webFontTest' paragraph, but could also be applied to <html> for the whole site... */
 .webFontTest {
 	color: rgb(55,50,45);
 	font-family: 'Test Font', Arial, Helvetica, sans-serif;		/* add your new font, plus some backups */
@@ -64,9 +63,13 @@ html, body {
 	text-align: justify;
 	
 	/* further font and type options */
-	font-weight: 100;						/* try with Helvetica or similar to see how you can 'thin up' a font */
-	letter-spacing: 0.5em;			/* 0 = normal, 0.5 = half again as much, 1 = twice as much, -0.5 = half less */
-	word-spacing: -0.5em;				/* ditto, for words */
-	line-height: 2em;						/* ditto, for space between lines */
-	text-transform: uppercase;	/* or capitalize, lowercase */
+	font-weight: 100;							/* try with Helvetica or similar to see how you can 'thin up' a font */
+	letter-spacing: 0.5em;						/* 0 = normal, 0.5 = half again as much, 1 = twice as much, -0.5 = half less */
+	word-spacing: -0.5em;						/* ditto, for words */
+	line-height: 2em;							/* ditto, for space between lines */
+	text-transform: uppercase;					/* or capitalize, lowercase */
+
+	/*	A NOTE ON FONT-WEIGHT 		
+		This sets the thickness of the font (if available) - 400 = normal, 100 = thinnest, 800 = thickest */
+
 }
