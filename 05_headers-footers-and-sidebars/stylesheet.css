@@ -104,12 +104,14 @@ header li {
 	width: 200px;
 	background-color: white;
 	padding: 20px;
+
+	border-right: 1px solid black;
 }
 
 /* 	format lists for menu ONLY in the sidebar */
 #sidebar ul {
 	margin: -1em 0 2em 0;				/* typical hacking w/ CSS: move list up -1em (16px) to */
-	border-top: 1px solid white;		/* remove spacing from the <p> tag, add more space on bototm */
+	border-top: 1px dashed rgb(255,150,0);		/* remove spacing from the <p> tag, add more space on bototm */
 }
 #sidebar li {
 	padding: 10px 0;					/* add 10px padding top/bottom, no padding right/left */
@@ -120,7 +122,7 @@ header li {
 /* 	this is where your main stuff would go, be it an article, a video, or a product */
 #content {
 	float: left;						/* also float left so it goes next to the sidebar */
-	width: 620px;						/* this should be the wrapper minus sidebar and padding on both */
+	width: 619px;						/* this should be the wrapper minus sidebar and padding on both */
 	background-color: white;
 	padding: 20px;
 	text-align: justify;

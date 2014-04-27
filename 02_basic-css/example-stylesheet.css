@@ -45,12 +45,12 @@ IDs are defined with the '#' before their name (ex: #mainTitle)
 
 /* 	BASIC HTML ELEMENTS */
 html, body {
-	background-color: rgb(150,150,150);				/* change background color for entire document*/
+	background-color: rgb(0,0,0);				/* change background color for entire document*/
 }
 
 h1 {												/* changes all <h1> instances */
 	font-family: Arial, Helvetica, sans-serif;		/* define fonts to "degrade gracefully" is not present on user's computer */
-	color: #555;									/* make text dark-ish gray */
+	color: black;									/* make text dark-ish gray */
 	font-size: 24px;								/* change font size - essentially equivelant to pt measurement in Word, etc */
 }
 
@@ -74,7 +74,7 @@ p {
 */
 
 /* 	LINKS -- change what they look like, and how they react when hovered over */
-a:link, a:visited {						/* basic link and one that has been clicked previously */
+a, a:link, a:visited {						/* basic link and one that has been clicked previously */
 	color: #F00;
 	text-decoration: none;				/* ie: no underline */
 }

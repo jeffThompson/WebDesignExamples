@@ -38,7 +38,7 @@ FontSquirrel		http://www.fontsquirrel.com
   	/* note: the second url() is a hack for Internet Explorer and replaces the 'smiley face' trick */
 	
 	/* make sure you reset font styling so your new font appears as desired */
-	font-weight: normal;
+	font-weight: 800;
   	font-style: normal;
 } 
 
@@ -63,10 +63,10 @@ html, body {
 	text-align: justify;
 	
 	/* further font and type options */
-	font-weight: 100;							/* try with Helvetica or similar to see how you can 'thin up' a font */
+	font-weight: 800;							/* try with Helvetica or similar to see how you can 'thin up' a font */
 	letter-spacing: 0.5em;						/* 0 = normal, 0.5 = half again as much, 1 = twice as much, -0.5 = half less */
 	word-spacing: -0.5em;						/* ditto, for words */
-	line-height: 2em;							/* ditto, for space between lines */
+	line-height: 1em;							/* ditto, for space between lines */
 	text-transform: uppercase;					/* or capitalize, lowercase */
 
 	/*	A NOTE ON FONT-WEIGHT 		
